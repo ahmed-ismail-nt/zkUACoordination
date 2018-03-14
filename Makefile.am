@@ -24,14 +24,14 @@ libzkua_la_LIBADD = -ljansson -lzookeeper_mt
 libzkua_la_LDFLAGS = $(LIB_LDFLAGS) -export-symbols-regex $(EXPORT_SYMBOLS) $(INCLUDES)
 
 bin_PROGRAMS = cli_mt_UA_client cli_mt_UA_server cli_mt_UA_failoverController
-cli_mt_UA_client_SOURCES = src/cli_UA_client.c $(ZKUA_SRC)
+cli_mt_UA_client_SOURCES = examples/cli_UA_client.c $(ZKUA_SRC)
 cli_mt_UA_client_LDADD = libzkua.la -lpthread -ljansson -lzookeeper_mt
 cli_mt_UA_client_CFLAGS = -DTHREADED -DINTERCEPT $(INCLUDES)
 
-cli_mt_UA_server_SOURCES = src/cli_UA_server.c $(ZKUA_SRC)
+cli_mt_UA_server_SOURCES =  examples/cli_UA_server.c $(ZKUA_SRC)
 cli_mt_UA_server_LDADD = libzkua.la -lpthread -ljansson -lzookeeper_mt
 cli_mt_UA_server_CFLAGS = -DTHREADED -DINTERCEPT $(INCLUDES)
 
-cli_mt_UA_failoverController_SOURCES = src/cli_UA_failoverController.c $(ZKUA_SRC)
+cli_mt_UA_failoverController_SOURCES =  examples/cli_UA_failoverController.c $(ZKUA_SRC)
 cli_mt_UA_failoverController_LDADD = libzkua.la -lpthread -ljansson -lzookeeper_mt
 cli_mt_UA_failoverController_CFLAGS = -DTHREADED -DINTERCEPT $(INCLUDES)
